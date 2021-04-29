@@ -5,6 +5,6 @@ public class Task1 {
         Rectangle rectangle = new Rectangle();
         rectangle.setHeight(6);
         rectangle.setWidth(6);
-        System.out.println(rectangle.height * rectangle.width);
+        System.out.println(rectangle.getHeight() * rectangle.getWidth());
     }
 }
