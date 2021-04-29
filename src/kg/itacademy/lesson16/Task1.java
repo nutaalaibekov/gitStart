@@ -2,16 +2,19 @@ package kg.itacademy.lesson16;
 
 public class Task1 {
     public static void main(String[] args) {
+        int heigh = -5;
         Rectangle square = new Rectangle();
-        square.setHeight(6);
-        square.setWidth(6);
+        square.setHeight(heigh);
+        square.setWidth(heigh);
+        square.setColor("Nujni svet");
 
-        Rectangle rectangle1 = new Rectangle();
-        rectangle1.setWidth(100);
-        rectangle1.setHeight(50);
+        heigh = 5;
+        square.setHeight(heigh);
+        square.setWidth(heigh);
 
+        System.out.println(square.getColor());
+        System.out.println(square.getWidth());
+        System.out.println(square.getHeight());
         System.out.println(square.getArea());
-        System.out.println(rectangle1.getArea());
-
     }
 }
