@@ -4,13 +4,16 @@ import java.util.Arrays;
 
 public class Task1 {
     public static void main(String[] args) {
-        int heigh = -5;
-        System.out.println("before create");
-        Rectangle square = new Rectangle(6, 10);
-        System.out.println("after create");
+        Cat matros = new Cat("Matros", 1);
+        Cat murka = new Cat("Murka", 1);
 
-        int[] arr = new int[3];
-        System.out.println(square);
+        System.out.println(matros);
+        System.out.println(murka);
 
+        matros.setAge(2);
+        murka.setAge(3);
+
+        System.out.println(matros);
+        System.out.println(murka);
     }
 }
