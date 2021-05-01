@@ -4,13 +4,13 @@ public class Cat {
     String name;
     int age;
 
-    public Cat(String n, int a) {
-        name = n;
-        age = a;
+    public Cat(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
     public String toString() {
-        return String.format("My name is %s, i am %s", name, age);
+        return String.format("My name is %s, i am %s", this.name, this.age);
     }
 
 

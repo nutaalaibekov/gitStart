@@ -4,16 +4,12 @@ import java.util.Arrays;
 
 public class Task1 {
     public static void main(String[] args) {
-        Cat matros = new Cat("Matros", 1);
-        Cat murka = new Cat("Murka", 1);
+        Circle black = new Circle(100);
+        Circle yellow = new Circle(100, "Yellow");
+        Circle hamleon = new Circle(100, "Green", true);
 
-        System.out.println(matros);
-        System.out.println(murka);
-
-        matros.setAge(2);
-        murka.setAge(3);
-
-        System.out.println(matros);
-        System.out.println(murka);
+        System.out.println(black);
+        System.out.println(yellow);
+        System.out.println(hamleon);
     }
 }
