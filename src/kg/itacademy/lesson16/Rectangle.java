@@ -5,6 +5,11 @@ public class Rectangle {
     int height;
     int area;
 
+    public Rectangle() {
+        height = 10;
+        width = 29;
+    }
+
     public Rectangle(int h, int w) {
         System.out.println("Rectangle construcor");
         height = h;
