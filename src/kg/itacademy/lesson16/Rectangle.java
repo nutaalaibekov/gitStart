@@ -5,6 +5,18 @@ public class Rectangle {
     int height;
     int area;
 
+    public Rectangle(int h, int w) {
+        System.out.println("Rectangle construcor");
+        height = h;
+        width = w;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("width=%s, height=%s, area=%s",
+                getHeight(), getWidth(), getArea());
+    }
+
     public String getColor() {
         return color;
     }
