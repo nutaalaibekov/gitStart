@@ -13,6 +13,16 @@ public class Notebook {
         this.cpu = cpu;
     }
 
+    public void setHdd(Hdd hdd) {
+        this.hdd = hdd;
+    }
+    public void setCpu(Cpu cpu) {
+        this.cpu = cpu;
+    }
+    public void setOs(Os os) {
+        this.os = os;
+    }
+
     @Override
     public String toString() {
         return "Notebook{" +
