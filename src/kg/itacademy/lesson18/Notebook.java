@@ -5,6 +5,7 @@ public class Notebook {
     Ram[] ram;
     Os os;
     Cpu cpu;
+    char[] keys;
 
     public Notebook(Hdd hdd, Ram[] ram, Os os, Cpu cpu) {
         this.hdd = hdd;
@@ -21,6 +22,14 @@ public class Notebook {
     }
     public void setOs(Os os) {
         this.os = os;
+    }
+
+    /**
+     * Приклеивание
+     * @param keys
+     */
+    public void setKays(char[] keys) {
+        this.keys = keys;
     }
 
     public Ram[] getRam() {
