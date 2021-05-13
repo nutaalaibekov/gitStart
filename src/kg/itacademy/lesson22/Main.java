@@ -2,20 +2,11 @@ package kg.itacademy.lesson22;
 
 public class Main {
     public static void main(String[] args) {
-        Counter counter1 = new Counter();
-        Counter counter2 = new Counter();
+        Dog barbos = new Dog("Barbos", 20, 2);
+        Dog rex = new Dog("Rex", 20, 2);
+        Dog muhtar = new Dog("Muhtar", 20, 2);
+        Dog muhtar1 = new Dog("Muhtar", 20, 2);
 
-        Counter.increment();
-        Counter.increment();
-        Counter.increment();
-
-        Counter counter12 = new Counter();
-        Counter counter22 = new Counter();
-
-        Counter.increment();
-        Counter.increment();
-        Counter.increment();
-
-        System.out.println(Counter.factorial());
+        System.out.println("Dogs count = " + Dog.getDogsCount());
     }
 }
