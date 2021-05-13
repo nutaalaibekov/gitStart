@@ -1,7 +1,17 @@
 package kg.itacademy.lesson22;
 
 public class Counter {
+    private int id;
     private static int numOfCalls;
+    private static int objectsCOunt;
+
+    public Counter() {
+        objectsCOunt++;
+    }
+
+    public static int getObjectsCOunt() {
+        return objectsCOunt;
+    }
     public static void increment() {
         numOfCalls++;
         System.out.println(numOfCalls);

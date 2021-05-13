@@ -16,6 +16,6 @@ public class Main {
         Counter.increment();
         Counter.increment();
 
-        Counter.factorial();
+        System.out.println(Counter.factorial());
     }
 }
