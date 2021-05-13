@@ -2,12 +2,13 @@ package kg.itacademy.figure;
 
 public class Main {
     public static void main(String[] args) {
-        LocationOfFigure location = new LocationOfFigure(1, 1);
-        Figure rectangle = new Figure(location, "black", true);
         LocationOfFigure location1 = new LocationOfFigure(100, 100);
-        Figure triangle = new Figure(location1, "red", false);
+        Figure figure = new Figure(location1, "red", false);
 
+        LocationOfFigure location2 = new LocationOfFigure(300, 100);
+        Rectangle rectangle = new Rectangle(location2, "red", false, 100, 200);
+
+        System.out.println(figure.speak());
         System.out.println(rectangle.speak());
-        System.out.println(triangle.speak());
     }
 }

@@ -1,9 +1,9 @@
 package kg.itacademy.figure;
 
 public class Figure {
-    private LocationOfFigure location;
-    private String color;
-    private boolean isVisible;
+    protected LocationOfFigure location;
+    protected String color;
+    protected boolean isVisible;
 
     public Figure(LocationOfFigure location, String color, boolean isVisible) {
         this.location = location;
