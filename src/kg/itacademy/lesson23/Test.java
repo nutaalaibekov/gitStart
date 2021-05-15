@@ -9,13 +9,11 @@ public class Test extends Canvas {
 
     @Override
     public void paint(Graphics graphics) {
-       Circle circles = new Circle(0, 0, Color.YELLOW, 50, 50);
-        graphics.setColor(circles.getColor()); // Нас интересует только этот блок
-        graphics.fillOval(circles.getX(), circles.getY(), circles.getWidth(), circles.getHeight()); // Остальное магия…
+        graphics.setColor(Color.YELLOW); // Нас интересует только этот блок
+        graphics.fillOval(100, 100, 100, 100); // Остальное магия…
 
-        Circle circles2 = new Circle(100, 100, Color.GREEN, 50, 50);
-        graphics.setColor(circles2.getColor()); // Нас интересует только этот блок
-        graphics.fillOval(circles2.getX(), circles2.getY(), circles2.getWidth(), circles2.getHeight()); // Остальное магия…
+        graphics.setColor(Color.GRAY); // Нас интересует только этот блок
+        graphics.fillOval(200, 100, 100, 100); // Остальное магия…
 
     }
 
