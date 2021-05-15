@@ -9,14 +9,15 @@ public class Test extends Canvas {
 
     @Override
     public void paint(Graphics graphics) {
-        final double PI = 3.1415;
-        graphics.setColor(Color.YELLOW); // Нас интересует только этот блок
-        graphics.fillOval(100, 100, 100, 100); // Остальное магия…
-        System.out.println(String.format("Желтый, площадь %s, длина %s", 50 * 50 * PI, (PI * 50 + 100)));
+        final Circle[] circles = new Circle[7];
+        circles[0] = new Circle(100, 100, Color.BLACK, 60, 60);
+        circles[1] = new Circle(150, 100, Color.BLACK, 60, 60);
 
-        graphics.setColor(Color.GRAY); // Нас интересует только этот блок
-        graphics.fillOval(200, 100, 100, 100); // Остальное магия…
-        System.out.println(String.format("Серый, площадь %s, длина %s", 50 * 50 * PI, (PI * 50 + 100)));
+        for(Circle circle : circles) {
+            graphics.setColor(circle.getColor()); // Нас интересует только этот блок
+            graphics.fillOval(circle.getX(), circle.getY(), circle.getWidth(), circle.getHeight()); // Остальное магия…
+        }
+
 
     }
 
