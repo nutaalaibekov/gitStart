@@ -9,6 +9,7 @@ public class Test extends Canvas {
 
     @Override
     public void paint(Graphics graphics) {
+
         final Circle[] circles = new Circle[7];
         circles[0] = new Circle(100, 100, Color.BLACK, 60, 60);
         circles[1] = new Circle(120, 120, Color.YELLOW, 70, 70);
