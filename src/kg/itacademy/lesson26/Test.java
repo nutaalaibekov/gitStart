@@ -7,6 +7,11 @@ public class Test {
         Turtle turtle = new Turtle();
         Container toNY = new Container(turtle, chicken);
         toNY.transport();
+
+        System.out.println(Swimmable.IS_SWIMMABLE);
+        System.out.println(Swimmable.MAX_OCEAN_DEPTH);
+        System.out.println(EggLayable.MAX_OCEAN_DEPTH);
+        System.out.println(Carapaceble.MAX_OCEAN_DEPTH);
     }
 
 
