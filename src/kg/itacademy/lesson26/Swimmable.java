@@ -1,5 +1,7 @@
 package kg.itacademy.lesson26;
 
 public interface Swimmable {
-    void swim();
+    default void swim() {
+        System.out.println("Shlep shelp !!!");
+    }
 }
