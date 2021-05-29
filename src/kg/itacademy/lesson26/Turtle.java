@@ -1,6 +1,6 @@
 package kg.itacademy.lesson26;
 
-public class Turtle implements Carapaceble, EggLayable, Swimmable {
+public class Turtle implements TurtleBehaving {
     @Override
     public void wearCarapace() {
         System.out.println("Turtle wearCarapace");
