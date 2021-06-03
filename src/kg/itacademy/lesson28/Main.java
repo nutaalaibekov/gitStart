@@ -6,9 +6,21 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         FileWriter fileWriter = new FileWriter("file1.txt");
-        fileWriter.write("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z\n");
-        fileWriter.write("0123456789\n");
+        fileWriter.write("0\n");
+        fileWriter.write("1\n");
+        fileWriter.write("2\n");
+        fileWriter.write("3\n");
+        fileWriter.write("4\n");
+        fileWriter.write("5\n");
+        fileWriter.write("6\n");
+        fileWriter.write("7\n");
+        fileWriter.write("8\n");
+        fileWriter.write("9\n");
         fileWriter.close();
 
     }
+
+
+
+
 }
