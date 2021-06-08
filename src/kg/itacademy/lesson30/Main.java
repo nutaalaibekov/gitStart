@@ -13,13 +13,11 @@ public class Main {
             try {
                 count++;
                 System.out.println(cats[count].getName());
-            } catch (NullPointerException npe) {
-                System.out.println(count);
-                System.out.println("NullPointerException ЗАБРАЛИ КОШКУ");
-            } catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println(count);
-                System.out.println("ArrayIndexOutOfBoundsException ЗАБРАЛИ КОШКУ");
+                System.out.println("End of CODE");
+            } finally {
+                System.out.println("я выполнюсь все равно count: " + count);
             }
+
         }
     }
 }
