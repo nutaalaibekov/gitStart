@@ -1,7 +1,7 @@
 package kg.itacademy.lesson30;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws RuntimeException {
         Cat[] cats = new Cat[5];
         cats[0] = new Cat("Cat1");
         cats[1] = new Cat("Cat2");
@@ -10,14 +10,9 @@ public class Main {
         cats[4] = new Cat("Cat5");
         int count = 0;
         for(Cat cat : cats) {
-            try {
-                count++;
-                System.out.println(cats[count].getName());
-                System.out.println("End of CODE");
-            } finally {
-                System.out.println("я выполнюсь все равно count: " + count);
-            }
-
+            count++;
+            System.out.println(cats[count].getName());
+            System.out.println("End of CODE");
         }
     }
 }
