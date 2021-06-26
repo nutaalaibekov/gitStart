@@ -4,15 +4,22 @@ public abstract class House {
     private String city;
     private String street;
     private String house;
-    // TODO: hoouseType enum
+    private HousePayType payType;
+    private HouseType type;
 
-    public House(String city, String street, String house) {
+    public House(String city, String street, String house, HousePayType payType, HouseType type) {
         this.city = city;
         this.street = street;
         this.house = house;
     }
     public abstract String getAddress();
-    public abstract void payHouseBills(HousePayable payer);
+    public void payHouseBills(HousePayable payer) throws Exception {
+        if (payType == HousePayType.FREE_FOR_AID || payType == HousePayType.FREE_FOR_MILITARY) {
+            return;
+        } else {
+            throw new Exception("You should implement method payHouseBills");
+        }
+    }
 
     public String getCity() {
         return city;
@@ -36,5 +43,13 @@ public abstract class House {
 
     public void setHouse(String house) {
         this.house = house;
+    }
+
+    public HousePayType getPayType() {
+        return payType;
+    }
+
+    public HouseType getType() {
+        return type;
     }
 }
