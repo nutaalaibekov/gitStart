@@ -11,6 +11,8 @@ public abstract class House {
         this.city = city;
         this.street = street;
         this.house = house;
+        this.payType = payType;
+        this.type = type;
     }
     public abstract String getAddress();
     public void payHouseBills(HousePayable payer) throws Exception {

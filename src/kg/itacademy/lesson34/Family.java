@@ -35,5 +35,11 @@ public class Family implements HousePayable {
         return house.getAddress();
     }
 
+    public House getHouse() {
+        return house;
+    }
 
+    public void setHouse(House house) {
+        this.house = house;
+    }
 }
