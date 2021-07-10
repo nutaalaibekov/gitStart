@@ -1,0 +1,97 @@
+package kg.itacademy.lesson39.dao.impl;
+
+import kg.itacademy.lesson39.dao.BaseDao;
+import kg.itacademy.lesson39.dao.StudentsDao;
+import kg.itacademy.lesson39.model.Student;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class StudentsDaoImpl extends BaseDao implements StudentsDao {
+    public List<Student> getAll() {
+        List<Student> students = null;
+        Connection connection = null;
+        ResultSet resultSet = null;
+        PreparedStatement statement = null;
+        try{
+            connection = connect();
+            statement = connection.prepareStatement("SELECT * FROM students");
+            resultSet = statement.executeQuery();
+            students = new ArrayList<>();
+
+            while (resultSet.next()) {
+                Student student = new Student();
+                student.setId(resultSet.getInt("id"));
+                student.setFullName(resultSet.getString("full_name"));
+                student.setFkGroupId(resultSet.getInt("fk_group_id"));
+                students.add(student);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException exception) {
+                exception.printStackTrace();
+            }
+            try {
+                statement.close();
+            } catch (SQLException exception) {
+                exception.printStackTrace();
+            }
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return students;
+    }
+
+    public boolean updateStudent(Student student) {
+        if (student == null) {
+            throw new IllegalArgumentException("parameter not found");
+        }
+        if (student.getId() == null) {
+            throw new IllegalArgumentException("given Student does not exist");
+        }
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            connection = connect();
+            preparedStatement = connection
+                    .prepareStatement("update students " +
+                            "set " +
+                            " full_name = ?," +
+                            " fk_group_id = ?" +
+                            " where id = ?");
+            preparedStatement.setString(1, student.getFullName());
+            preparedStatement.setInt(2, student.getFkGroupId());
+            preparedStatement.setInt(3, student.getId());
+            int count = preparedStatement.executeUpdate();
+            return count > 0;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        finally {
+            try {
+                preparedStatement.close();
+            } catch (SQLException exception) {
+                exception.printStackTrace();
+            }
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
+
+
+}
