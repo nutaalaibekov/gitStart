@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentsDaoImpl extends BaseDao implements StudentsDao {
+
     public List<Student> getAll() {
         List<Student> students = null;
         Connection connection = null;
@@ -93,5 +94,39 @@ public class StudentsDaoImpl extends BaseDao implements StudentsDao {
         return false;
     }
 
+    public int countStudents() {
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
 
+        try {
+            connection = connect();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("   select count(*) from students\n" +
+                                                    "    where full_name like '%a%'");
+
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                resultSet.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            try {
+                statement.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            try {
+                connection.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+        return 0;
+    }
 }

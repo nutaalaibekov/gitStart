@@ -9,10 +9,12 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         StudentsDao studentsDao = new StudentsDaoImpl();
-        List<Student> students = studentsDao.getAll();
-        for(Student student : students) {
-            System.out.println(student);
-        }
+        System.out.println("Count of students full_name '%s%' = " + studentsDao.countStudents());
+
+//        List<Student> students = studentsDao.getAll();
+//        for(Student student : students) {
+//            System.out.println(student);
+//        }
 
 //        Student studentForUpdate = students.get(0);
 //        studentForUpdate.setFullName("TestOV");
