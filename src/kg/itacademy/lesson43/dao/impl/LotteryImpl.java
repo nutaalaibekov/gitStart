@@ -264,4 +264,9 @@ public class LotteryImpl implements Lottery {
         }
         return null;
     }
+
+    @Override
+    public List<PrizeModel> getAllPrizeByLottery(LotteryModel lotteryModel) {
+        return null;
+    }
 }
