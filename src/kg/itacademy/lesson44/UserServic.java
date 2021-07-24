@@ -15,7 +15,7 @@ public class UserServic {
 
         userModel = usersDao.createUser(userModel);
 
-        if (userModel != null) {
+        if (userModel.getId() != null) {
             return true;
         }
         return false;

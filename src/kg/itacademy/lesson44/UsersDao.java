@@ -23,7 +23,7 @@ public class UsersDao {
             connection = connect();
             statement = connection
                     .prepareStatement("insert into users( login, email, password, date_of_registration)\n" +
-                            " values(?, ?, ?, ?)");
+                            " values(?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, userModel.getLogin());
             statement.setString(2, userModel.getEmail());
             statement.setString(3, userModel.getPassword());
